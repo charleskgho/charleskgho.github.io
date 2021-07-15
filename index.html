@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>CKH Technologies | E-commerce Apps</title>
+</head>
+
+<!-- Refer to https://store.orderlyemails.com/ and https://www.forsbergplustwo.com/ for design inspiration -->
+
+<body>
+    <!-- Header -->
+    <header class="hero">
+        <div id="navbar" class="navbar top">
+            <div class="logo">
+                <img src="images/home/mody-logo.png">
+                <h1><span>CKH</span>Technologies</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <h1>We make apps for e-commmerce</h1>
+            <p>CKH Technologies is a development and design studio based in Sydney Australia, with expertise in
+                e-commerce.</p>
+            <a href="#about" class="btn"><i class="fas fa-chevron-right"></i> Read More</a>
+        </div>
+
+    </header>
+
+    <!--- Main Sections -->
+    <main>
+        <section id="about" class="about flex-columns">
+            <header class="section-header">
+                <h2>About us</h2>
+                <blockquote>
+                    <h3>
+                        CKH Technologies is a development and design studio based in Sydney Australia, with
+                        expertise in apps for e-commerce.
+                    </h3>
+                </blockquote>
+            </header>
+            <div class="row">
+                <div class="column">
+                    <div class="column-1">
+                        <img src="images/home/charles.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-2 bg-white">
+                        <p>
+                            Hey, my name is Charles and I originally started CKH Technologies in 2009 as a side
+                            project to my full-time work at a multinational technlogy company. The focus has always been
+                            developing delightful web applications and mobile apps for iOS with expertise in e-commerce.
+                        </p>
+                        <p>
+                            I'm a company of one by design, so you'll find me doing everything from design,
+                            development,
+                            marketing as well as ongoing customer support.
+                        </p>
+                        <p>Kind regards,</p>
+                        <p>
+                            Charles Ho<br>
+                            Founder - CKH Technologies
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--- Footer -->
+    <footer id="contact" class="bg-dark">
+        <div class="footer">
+            <div class="logo">
+                <img src="images/home/mody-logo.png">
+                <h2><span>CKH</span>Technologies</h2>
+            </div>
+            <div>
+                <!--
+                <div class="social">
+                    
+                    <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+                    <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+
+                </div>
+                -->
+            </div>
+            <div class="company-info">
+                <h3>Company Info</h3>
+                <p>CKH Technologies Pty Ltd</p>
+                <p><strong>Australian business number (ABN):</strong> 97 141 223 663</p>
+                <p>hello@ckhtechnologies.com.au</p>
+            </div>
+        </div>
+        <p class="copyright">Copyright &copy; 2021 - CKH Technologies Pty Ltd</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script>
+        const navbar = document.getElementById('navbar');
+        let scrolled = false;
+
+        window.onscroll = function () {
+            if (window.pageYOffset > 100) {
+                navbar.classList.remove('top');
+                if (!scrolled) {
+                    navbar.style.transform = 'translateY(-70px)';
+                }
+                setTimeout(function () {
+                    navbar.style.transform = 'translateY(0px)';
+                    scrolled = true;
+                }, 200);
+            } else {
+                navbar.classList.add('top');
+                scrolled = false;
+            }
+        }
+
+        // Smooth Scrolling
+        $('#navbar a, .btn').on('click', function (e) {
+            if (this.hash !== '') {
+                e.preventDefault();
+
+                const hash = this.hash;
+
+                $('html, body').animate(
+                    {
+                        scrollTop: $(hash).offset().top - 100,
+                    },
+                    800
+                );
+            }
+        });
+    </script>
+</body>
+
+</html>
